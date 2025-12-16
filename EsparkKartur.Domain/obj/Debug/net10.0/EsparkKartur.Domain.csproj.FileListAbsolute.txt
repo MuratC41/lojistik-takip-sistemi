@@ -1,0 +1,11 @@
+C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Domain\bin\Debug\net10.0\EsparkKartur.Domain.deps.json
+C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Domain\bin\Debug\net10.0\EsparkKartur.Domain.dll
+C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Domain\bin\Debug\net10.0\EsparkKartur.Domain.pdb
+C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Domain\obj\Debug\net10.0\EsparkKartur.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Domain\obj\Debug\net10.0\EsparkKartur.Domain.AssemblyInfoInputs.cache
+C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Domain\obj\Debug\net10.0\EsparkKartur.Domain.AssemblyInfo.cs
+C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Domain\obj\Debug\net10.0\EsparkKartur.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Domain\obj\Debug\net10.0\EsparkKartur.Domain.dll
+C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Domain\obj\Debug\net10.0\refint\EsparkKartur.Domain.dll
+C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Domain\obj\Debug\net10.0\EsparkKartur.Domain.pdb
+C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Domain\obj\Debug\net10.0\ref\EsparkKartur.Domain.dll

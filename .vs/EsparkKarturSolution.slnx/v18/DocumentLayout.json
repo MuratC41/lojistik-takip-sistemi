@@ -1,0 +1,534 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.application\\services\\sevkfisiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|solutionrelative:esparkkartur.application\\services\\sevkfisiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3241881E-9E01-6077-8A89-F76B4D538740}|EsparkKartur.Domain\\EsparkKartur.Domain.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.domain\\entities\\sevkfisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3241881E-9E01-6077-8A89-F76B4D538740}|EsparkKartur.Domain\\EsparkKartur.Domain.csproj|solutionrelative:esparkkartur.domain\\entities\\sevkfisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3241881E-9E01-6077-8A89-F76B4D538740}|EsparkKartur.Domain\\EsparkKartur.Domain.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.domain\\entities\\fiskargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3241881E-9E01-6077-8A89-F76B4D538740}|EsparkKartur.Domain\\EsparkKartur.Domain.csproj|solutionrelative:esparkkartur.domain\\entities\\fiskargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3241881E-9E01-6077-8A89-F76B4D538740}|EsparkKartur.Domain\\EsparkKartur.Domain.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.domain\\entities\\kargofirmasi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3241881E-9E01-6077-8A89-F76B4D538740}|EsparkKartur.Domain\\EsparkKartur.Domain.csproj|solutionrelative:esparkkartur.domain\\entities\\kargofirmasi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.application\\fiyatsabitleri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|solutionrelative:esparkkartur.application\\fiyatsabitleri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.application\\dtos\\sevkfisi\\createsevkfisirequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|solutionrelative:esparkkartur.application\\dtos\\sevkfisi\\createsevkfisirequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3241881E-9E01-6077-8A89-F76B4D538740}|EsparkKartur.Domain\\EsparkKartur.Domain.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.domain\\entities\\fisurunleri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3241881E-9E01-6077-8A89-F76B4D538740}|EsparkKartur.Domain\\EsparkKartur.Domain.csproj|solutionrelative:esparkkartur.domain\\entities\\fisurunleri.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.application\\enums\\araclar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|solutionrelative:esparkkartur.application\\enums\\araclar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.application\\enums\\gonderimmodu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|solutionrelative:esparkkartur.application\\enums\\gonderimmodu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3241881E-9E01-6077-8A89-F76B4D538740}|EsparkKartur.Domain\\EsparkKartur.Domain.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.domain\\entities\\tarife.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3241881E-9E01-6077-8A89-F76B4D538740}|EsparkKartur.Domain\\EsparkKartur.Domain.csproj|solutionrelative:esparkkartur.domain\\entities\\tarife.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.application\\enums\\kayitdurum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|solutionrelative:esparkkartur.application\\enums\\kayitdurum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3241881E-9E01-6077-8A89-F76B4D538740}|EsparkKartur.Domain\\EsparkKartur.Domain.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.domain\\entities\\magaza.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3241881E-9E01-6077-8A89-F76B4D538740}|EsparkKartur.Domain\\EsparkKartur.Domain.csproj|solutionrelative:esparkkartur.domain\\entities\\magaza.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3FBD8E5-A68A-2E8F-ADDF-5F70F9EB20E0}|EsparkKartur.Infrastructure\\EsparkKartur.Infrastructure.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.infrastructure\\context\\esparkkarturdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3FBD8E5-A68A-2E8F-ADDF-5F70F9EB20E0}|EsparkKartur.Infrastructure\\EsparkKartur.Infrastructure.csproj|solutionrelative:esparkkartur.infrastructure\\context\\esparkkarturdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.application\\dtos\\sevkfisi\\sevkfisiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|solutionrelative:esparkkartur.application\\dtos\\sevkfisi\\sevkfisiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB3CD914-635D-DE32-4523-2C888557CE84}|EsparkKartur.API\\EsparkKartur.API.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.api\\controllers\\sevkfisicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB3CD914-635D-DE32-4523-2C888557CE84}|EsparkKartur.API\\EsparkKartur.API.csproj|solutionrelative:esparkkartur.api\\controllers\\sevkfisicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.application\\enummapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|solutionrelative:esparkkartur.application\\enummapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.application\\enums\\sevkyon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|solutionrelative:esparkkartur.application\\enums\\sevkyon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.application\\repositories\\ientityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|solutionrelative:esparkkartur.application\\repositories\\ientityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.application\\repositories\\iseferrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|solutionrelative:esparkkartur.application\\repositories\\iseferrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.application\\repositories\\isevkfisirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|solutionrelative:esparkkartur.application\\repositories\\isevkfisirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.application\\repositories\\itariferepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|solutionrelative:esparkkartur.application\\repositories\\itariferepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.application\\services\\isevkfisiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8C18765-E268-4ACC-D078-1260739C57B6}|EsparkKartur.Application\\EsparkKartur.Application.csproj|solutionrelative:esparkkartur.application\\services\\isevkfisiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3FBD8E5-A68A-2E8F-ADDF-5F70F9EB20E0}|EsparkKartur.Infrastructure\\EsparkKartur.Infrastructure.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.infrastructure\\repositories\\efentityrepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3FBD8E5-A68A-2E8F-ADDF-5F70F9EB20E0}|EsparkKartur.Infrastructure\\EsparkKartur.Infrastructure.csproj|solutionrelative:esparkkartur.infrastructure\\repositories\\efentityrepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3FBD8E5-A68A-2E8F-ADDF-5F70F9EB20E0}|EsparkKartur.Infrastructure\\EsparkKartur.Infrastructure.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.infrastructure\\repositories\\efseferrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3FBD8E5-A68A-2E8F-ADDF-5F70F9EB20E0}|EsparkKartur.Infrastructure\\EsparkKartur.Infrastructure.csproj|solutionrelative:esparkkartur.infrastructure\\repositories\\efseferrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3FBD8E5-A68A-2E8F-ADDF-5F70F9EB20E0}|EsparkKartur.Infrastructure\\EsparkKartur.Infrastructure.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.infrastructure\\repositories\\efsevkfisirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3FBD8E5-A68A-2E8F-ADDF-5F70F9EB20E0}|EsparkKartur.Infrastructure\\EsparkKartur.Infrastructure.csproj|solutionrelative:esparkkartur.infrastructure\\repositories\\efsevkfisirepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3FBD8E5-A68A-2E8F-ADDF-5F70F9EB20E0}|EsparkKartur.Infrastructure\\EsparkKartur.Infrastructure.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.infrastructure\\repositories\\eftariferepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3FBD8E5-A68A-2E8F-ADDF-5F70F9EB20E0}|EsparkKartur.Infrastructure\\EsparkKartur.Infrastructure.csproj|solutionrelative:esparkkartur.infrastructure\\repositories\\eftariferepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3241881E-9E01-6077-8A89-F76B4D538740}|EsparkKartur.Domain\\EsparkKartur.Domain.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.domain\\entities\\kullanici.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3241881E-9E01-6077-8A89-F76B4D538740}|EsparkKartur.Domain\\EsparkKartur.Domain.csproj|solutionrelative:esparkkartur.domain\\entities\\kullanici.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3241881E-9E01-6077-8A89-F76B4D538740}|EsparkKartur.Domain\\EsparkKartur.Domain.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.domain\\entities\\kullanicirol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3241881E-9E01-6077-8A89-F76B4D538740}|EsparkKartur.Domain\\EsparkKartur.Domain.csproj|solutionrelative:esparkkartur.domain\\entities\\kullanicirol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3FBD8E5-A68A-2E8F-ADDF-5F70F9EB20E0}|EsparkKartur.Infrastructure\\EsparkKartur.Infrastructure.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.infrastructure\\migrations\\esparkkarturdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3FBD8E5-A68A-2E8F-ADDF-5F70F9EB20E0}|EsparkKartur.Infrastructure\\EsparkKartur.Infrastructure.csproj|solutionrelative:esparkkartur.infrastructure\\migrations\\esparkkarturdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3241881E-9E01-6077-8A89-F76B4D538740}|EsparkKartur.Domain\\EsparkKartur.Domain.csproj|c:\\users\\murat\\desktop\\esparkkartursolution\\esparkkartur.domain\\entities\\sefer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3241881E-9E01-6077-8A89-F76B4D538740}|EsparkKartur.Domain\\EsparkKartur.Domain.csproj|solutionrelative:esparkkartur.domain\\entities\\sefer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SevkFisiService.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Services\\SevkFisiService.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Application\\Services\\SevkFisiService.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Services\\SevkFisiService.cs",
+              "RelativeToolTip": "EsparkKartur.Application\\Services\\SevkFisiService.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAgwI8AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T11:29:08.317Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SevkFisi.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Domain\\Entities\\SevkFisi.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Domain\\Entities\\SevkFisi.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Domain\\Entities\\SevkFisi.cs",
+              "RelativeToolTip": "EsparkKartur.Domain\\Entities\\SevkFisi.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAA8wBsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T11:36:36.126Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "KargoFirmasi.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Domain\\Entities\\KargoFirmasi.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Domain\\Entities\\KargoFirmasi.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Domain\\Entities\\KargoFirmasi.cs",
+              "RelativeToolTip": "EsparkKartur.Domain\\Entities\\KargoFirmasi.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAowBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T11:54:15.831Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FisKargo.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Domain\\Entities\\FisKargo.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Domain\\Entities\\FisKargo.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Domain\\Entities\\FisKargo.cs",
+              "RelativeToolTip": "EsparkKartur.Domain\\Entities\\FisKargo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T11:53:13.616Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FiyatSabitleri.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\FiyatSabitleri.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Application\\FiyatSabitleri.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\FiyatSabitleri.cs",
+              "RelativeToolTip": "EsparkKartur.Application\\FiyatSabitleri.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T19:07:44.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreateSevkFisiRequest.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\DTOs\\SevkFisi\\CreateSevkFisiRequest.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Application\\DTOs\\SevkFisi\\CreateSevkFisiRequest.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\DTOs\\SevkFisi\\CreateSevkFisiRequest.cs",
+              "RelativeToolTip": "EsparkKartur.Application\\DTOs\\SevkFisi\\CreateSevkFisiRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T14:49:29.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FisUrunleri.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Domain\\Entities\\FisUrunleri.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Domain\\Entities\\FisUrunleri.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Domain\\Entities\\FisUrunleri.cs",
+              "RelativeToolTip": "EsparkKartur.Domain\\Entities\\FisUrunleri.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T11:53:16.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Araclar.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Enums\\Araclar.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Application\\Enums\\Araclar.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Enums\\Araclar.cs",
+              "RelativeToolTip": "EsparkKartur.Application\\Enums\\Araclar.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T19:05:35.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Tarife.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Domain\\Entities\\Tarife.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Domain\\Entities\\Tarife.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Domain\\Entities\\Tarife.cs",
+              "RelativeToolTip": "EsparkKartur.Domain\\Entities\\Tarife.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T11:56:39.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "KayitDurum.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Enums\\KayitDurum.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Application\\Enums\\KayitDurum.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Enums\\KayitDurum.cs",
+              "RelativeToolTip": "EsparkKartur.Application\\Enums\\KayitDurum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T17:58:46.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Magaza.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Domain\\Entities\\Magaza.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Domain\\Entities\\Magaza.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Domain\\Entities\\Magaza.cs",
+              "RelativeToolTip": "EsparkKartur.Domain\\Entities\\Magaza.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T11:50:56.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GonderimModu.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Enums\\GonderimModu.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Application\\Enums\\GonderimModu.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Enums\\GonderimModu.cs",
+              "RelativeToolTip": "EsparkKartur.Application\\Enums\\GonderimModu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T18:01:19.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "EsparkKarturDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Infrastructure\\Context\\EsparkKarturDbContext.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Infrastructure\\Context\\EsparkKarturDbContext.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Infrastructure\\Context\\EsparkKarturDbContext.cs",
+              "RelativeToolTip": "EsparkKartur.Infrastructure\\Context\\EsparkKarturDbContext.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAcwAEAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T13:11:00.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SevkFisiResponse.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\DTOs\\SevkFisi\\SevkFisiResponse.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Application\\DTOs\\SevkFisi\\SevkFisiResponse.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\DTOs\\SevkFisi\\SevkFisiResponse.cs",
+              "RelativeToolTip": "EsparkKartur.Application\\DTOs\\SevkFisi\\SevkFisiResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T11:28:42.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SevkFisiController.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.API\\Controllers\\SevkFisiController.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.API\\Controllers\\SevkFisiController.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.API\\Controllers\\SevkFisiController.cs",
+              "RelativeToolTip": "EsparkKartur.API\\Controllers\\SevkFisiController.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAQwEoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T11:28:21.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "EnumMapper.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\EnumMapper.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Application\\EnumMapper.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\EnumMapper.cs",
+              "RelativeToolTip": "EsparkKartur.Application\\EnumMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T18:03:22.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SevkYon.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Enums\\SevkYon.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Application\\Enums\\SevkYon.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Enums\\SevkYon.cs",
+              "RelativeToolTip": "EsparkKartur.Application\\Enums\\SevkYon.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T18:00:40.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IEntityRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Repositories\\IEntityRepository.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Application\\Repositories\\IEntityRepository.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Repositories\\IEntityRepository.cs",
+              "RelativeToolTip": "EsparkKartur.Application\\Repositories\\IEntityRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T11:45:00.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ISeferRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Repositories\\ISeferRepository.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Application\\Repositories\\ISeferRepository.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Repositories\\ISeferRepository.cs",
+              "RelativeToolTip": "EsparkKartur.Application\\Repositories\\ISeferRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T11:38:29.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ISevkFisiRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Repositories\\ISevkFisiRepository.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Application\\Repositories\\ISevkFisiRepository.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Repositories\\ISevkFisiRepository.cs",
+              "RelativeToolTip": "EsparkKartur.Application\\Repositories\\ISevkFisiRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T11:35:47.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ITarifeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Repositories\\ITarifeRepository.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Application\\Repositories\\ITarifeRepository.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Repositories\\ITarifeRepository.cs",
+              "RelativeToolTip": "EsparkKartur.Application\\Repositories\\ITarifeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T17:31:53.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "EfEntityRepositoryBase.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Infrastructure\\Repositories\\EfEntityRepositoryBase.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Infrastructure\\Repositories\\EfEntityRepositoryBase.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Infrastructure\\Repositories\\EfEntityRepositoryBase.cs",
+              "RelativeToolTip": "EsparkKartur.Infrastructure\\Repositories\\EfEntityRepositoryBase.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAgwF8AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T16:30:12.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ISevkFisiService.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Services\\ISevkFisiService.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Application\\Services\\ISevkFisiService.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Application\\Services\\ISevkFisiService.cs",
+              "RelativeToolTip": "EsparkKartur.Application\\Services\\ISevkFisiService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T11:29:05.16Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "EfSeferRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Infrastructure\\Repositories\\EfSeferRepository.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Infrastructure\\Repositories\\EfSeferRepository.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Infrastructure\\Repositories\\EfSeferRepository.cs",
+              "RelativeToolTip": "EsparkKartur.Infrastructure\\Repositories\\EfSeferRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T11:35:21.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "EfSevkFisiRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Infrastructure\\Repositories\\EfSevkFisiRepository.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Infrastructure\\Repositories\\EfSevkFisiRepository.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Infrastructure\\Repositories\\EfSevkFisiRepository.cs",
+              "RelativeToolTip": "EsparkKartur.Infrastructure\\Repositories\\EfSevkFisiRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T11:35:16.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "EfTarifeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Infrastructure\\Repositories\\EfTarifeRepository.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Infrastructure\\Repositories\\EfTarifeRepository.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Infrastructure\\Repositories\\EfTarifeRepository.cs",
+              "RelativeToolTip": "EsparkKartur.Infrastructure\\Repositories\\EfTarifeRepository.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T14:37:24.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Kullanici.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Domain\\Entities\\Kullanici.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Domain\\Entities\\Kullanici.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Domain\\Entities\\Kullanici.cs",
+              "RelativeToolTip": "EsparkKartur.Domain\\Entities\\Kullanici.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T11:50:51.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "KullaniciRol.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Domain\\Entities\\KullaniciRol.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Domain\\Entities\\KullaniciRol.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Domain\\Entities\\KullaniciRol.cs",
+              "RelativeToolTip": "EsparkKartur.Domain\\Entities\\KullaniciRol.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T14:23:14.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "EsparkKarturDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Infrastructure\\Migrations\\EsparkKarturDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Infrastructure\\Migrations\\EsparkKarturDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Infrastructure\\Migrations\\EsparkKarturDbContextModelSnapshot.cs",
+              "RelativeToolTip": "EsparkKartur.Infrastructure\\Migrations\\EsparkKarturDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAJABAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T13:09:33.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Sefer.cs",
+              "DocumentMoniker": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Domain\\Entities\\Sefer.cs",
+              "RelativeDocumentMoniker": "EsparkKartur.Domain\\Entities\\Sefer.cs",
+              "ToolTip": "C:\\Users\\Murat\\Desktop\\EsparkKarturSolution\\EsparkKartur.Domain\\Entities\\Sefer.cs",
+              "RelativeToolTip": "EsparkKartur.Domain\\Entities\\Sefer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T11:54:01.604Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

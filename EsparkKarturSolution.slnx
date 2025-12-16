@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="EsparkKartur.API/EsparkKartur.API.csproj" />
+  <Project Path="EsparkKartur.Application/EsparkKartur.Application.csproj" />
+  <Project Path="EsparkKartur.Domain/EsparkKartur.Domain.csproj" />
+  <Project Path="EsparkKartur.Infrastructure/EsparkKartur.Infrastructure.csproj" />
+</Solution>
