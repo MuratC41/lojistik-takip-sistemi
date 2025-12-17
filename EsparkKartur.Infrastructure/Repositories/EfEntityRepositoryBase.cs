@@ -105,7 +105,21 @@ namespace EsparkKartur.Infrastructure.Repositories
 
 			return await query.ToListAsync();
 		}
+		// ✅ TEntity olarak güncellendi
+		public async Task<List<TEntity>> GetListWithIncludesAsync(
+			Expression<Func<TEntity, bool>>? filter = null,
+			Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>> include = null)
+		{
+			IQueryable<TEntity> query = _context.Set<TEntity>();
 
+			if (include != null)
+				query = include(query);
+
+			if (filter != null)
+				query = query.Where(filter);
+
+			return await query.ToListAsync();
+		}
 		public async Task<List<TEntity>> GetListAsync(Expression<Func<TEntity, bool>>? filter = null)
 		{
 			return await GetListAsync(filter, Array.Empty<Expression<Func<TEntity, object>>>());

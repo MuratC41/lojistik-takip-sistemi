@@ -1,10 +1,18 @@
-﻿using EsparkKartur.Application.DTOs.SevkFisi;
+﻿using EsparkKartur.Application;
+using EsparkKartur.Application.DTOs.SevkFisi;
+using EsparkKartur.Application.Repositories;
 using EsparkKartur.Application.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EsparkKartur.API.Controllers
 {
+
+	
+
+
+
+
 	[Route("api/[controller]")]
 	[ApiController]
 	public class SevkFisiController : ControllerBase
@@ -83,6 +91,18 @@ namespace EsparkKartur.API.Controllers
 		{
 			var rapor = await _sevkFisiService.GetFisRaporAsync(filtre);
 			return Ok(rapor);
+		}
+
+
+		[HttpGet("user/{kullaniciId}")]
+		public async Task<IActionResult> GetByKullaniciId(int kullaniciId)
+		{
+			var result = await _sevkFisiService.GetSevkFisleriByKullaniciIdAsync(kullaniciId);
+
+			if (result == null || !result.Any())
+				return NotFound($"{kullaniciId} ID'li kullanıcıya ait herhangi bir fiş bulunamadı.");
+
+			return Ok(result);
 		}
 
 		// ----------------------------------------------------------------------

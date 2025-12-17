@@ -33,6 +33,11 @@ namespace EsparkKartur.Application.Repositories
 			Expression<Func<T, bool>>? filter = null,
 			params Expression<Func<T, object>>[] includeProperties
 		);
+		// Liste olarak getir + Zincirleme İlişkileri Yükle (ThenInclude desteği için)
+		Task<List<T>> GetListWithIncludesAsync(
+			Expression<Func<T, bool>>? filter = null,
+			Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null
+		);
 
 		// Yeni kayıt ekle
 		Task AddAsync(T entity);

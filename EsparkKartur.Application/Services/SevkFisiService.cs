@@ -21,8 +21,7 @@ namespace EsparkKartur.Infrastructure.Services
 			_unitOfWork = unitOfWork;
 		}
 
-		// ... (Diğer metotlar ve CreateSevkFisiAsync aynı kalır) ...
-
+		//fis idsi ile dbden fis bilgileri cekme
 		public async Task<SevkFisiResponse> GetSevkFisiByIdAsync(int fisId)
 		{
 			var fullFis = await _fisRepository.GetWithIncludesAsync(
@@ -66,10 +65,7 @@ namespace EsparkKartur.Infrastructure.Services
 			};
 		}
 
-
-
-
-		// ... (Geri kalan metotlar aynı kalır) ...
+		// yeni fiş olusturma
 		public async Task<SevkFisiResponse> CreateSevkFisiAsync(CreateSevkFisiRequest request)
 		{
 			// 1. Aynı fiş numarası kontrolü
@@ -116,6 +112,8 @@ namespace EsparkKartur.Infrastructure.Services
 			// 4. Response Dön (Full veri ile)
 			return await GetSevkFisiByIdAsync(fis.Id);
 		}
+
+		//fiyat hesaplama
 		private decimal CalculatePrice(CreateSevkFisiRequest request)
 		{
 			if (request.GonderimModu.ToLower() == "parca_bazli")
@@ -139,15 +137,57 @@ namespace EsparkKartur.Infrastructure.Services
 			throw new InvalidOperationException("Geçersiz gönderim modu.");
 		}
 
-
-		public Task<List<SevkFisiResponse>> GetFisRaporAsync(FisFiltreRequest filtre)
+		//kullanıcı id ile olusturdugu fisleri filtreleme
+		public async Task<List<SevkFisiResponse>> GetSevkFisleriByKullaniciIdAsync(int kullaniciId)
 		{
-			throw new NotImplementedException();
+			// Yeni eklediğimiz GetListWithIncludesAsync metodunu kullanıyoruz
+			var fisler = await _fisRepository.GetListWithIncludesAsync(
+				filter: f => f.OlusturanID == kullaniciId,
+				include: query => query
+					.Include(f => f.Magaza)
+					.Include(f => f.Olusturan)
+					.Include(f => f.UrunDetaylari)
+					.Include(f => f.Kargoİlişkileri)
+						.ThenInclude(x => x.KargoFirmasi)
+			);
+
+			if (fisler == null) return new List<SevkFisiResponse>();
+
+			return fisler.Select(fullFis => new SevkFisiResponse
+			{
+				Id = fullFis.Id,
+				FişNumarasi = fullFis.FişNumarasi,
+				TarihSaat = fullFis.TarihSaat,
+				Fiyat = fullFis.Fiyat,
+
+				Durum = ((KayitDurum)fullFis.Durum).ToString().ToLower(),
+				Yon = ((SevkYon)fullFis.Yon).ToString().ToLower(),
+				GonderimModu = ((GonderimModu)fullFis.GonderimModu).ToString().ToLower(),
+
+				MagazaAdi = fullFis.Magaza?.MagazaAdi ?? "Mağaza Belirtilmemiş",
+				PersonelAdSoyad = fullFis.Olusturan?.AdSoyad ?? "Bilinmiyor",
+				TeslimAlanAdSoyad = fullFis.TeslimAlanAdSoyad,
+
+				KoliAdet = fullFis.UrunDetaylari?.KoliAdet ?? 0,
+				PaketAdet = fullFis.UrunDetaylari?.PaketAdet ?? 0,
+
+				KargoFirmalari = fullFis.Kargoİlişkileri != null
+					? string.Join(", ", fullFis.Kargoİlişkileri.Select(x => x.KargoFirmasi?.FirmaAdi))
+					: string.Empty,
+
+				ImzaDosyasi = fullFis.ImzaDosyasi
+			}).ToList();
 		}
 
 		public Task<bool> KayitTamamlaMobilImzaAsync(int fisId, string imzaDosyasiBase64)
 		{
 			throw new NotImplementedException();
+		}
+		// SevkFisiService.cs içindeki metodun imzasını şu şekilde güncelle:
+		public async Task<List<SevkFisiResponse>> GetFisRaporAsync(FisFiltreRequest request)
+		{
+			// Hata vermemesi için şimdilik boş bir liste dönelim
+			return new List<SevkFisiResponse>();
 		}
 	}
 }

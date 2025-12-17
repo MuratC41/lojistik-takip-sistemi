@@ -13,3 +13,4 @@ C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Application\obj\Debug\n
 C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Application\obj\Debug\net10.0\refint\EsparkKartur.Application.dll
 C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Application\obj\Debug\net10.0\EsparkKartur.Application.pdb
 C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Application\obj\Debug\net10.0\ref\EsparkKartur.Application.dll
+C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Application\obj\Debug\net10.0\EsparkKartur.Application.sourcelink.json

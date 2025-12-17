@@ -1,11 +1,12 @@
-﻿using EsparkKartur.Infrastructure.Context;
-using Microsoft.EntityFrameworkCore;
+﻿using EsparkKartur.Application;
 using EsparkKartur.Application.Repositories;
-using EsparkKartur.Infrastructure.Repositories;
-using EsparkKartur.Application;
-using EsparkKartur.Infrastructure;
 using EsparkKartur.Application.Services;
+using EsparkKartur.Infrastructure;
+using EsparkKartur.Infrastructure.Context;
+using EsparkKartur.Infrastructure.Repositories;
 using EsparkKartur.Infrastructure.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,7 +34,7 @@ builder.Services.AddScoped<ISevkFisiRepository, EfSevkFisiRepository>();
 // -------------------------------------------------
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ISevkFisiService, SevkFisiService>();
-
+builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

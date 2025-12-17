@@ -7,9 +7,9 @@ namespace EsparkKartur.Application.Services
 	{
 		// Yeni eklenen metot
 		Task<SevkFisiResponse?> GetSevkFisiByIdAsync(int fisId);
-
 		Task<SevkFisiResponse> CreateSevkFisiAsync(CreateSevkFisiRequest request);
 		Task<List<SevkFisiResponse>> GetFisRaporAsync(FisFiltreRequest filtre);
 		Task<bool> KayitTamamlaMobilImzaAsync(int fisId, string imzaDosyasiBase64);
+		Task<List<SevkFisiResponse>> GetSevkFisleriByKullaniciIdAsync(int kullaniciId);
 	}
 }
