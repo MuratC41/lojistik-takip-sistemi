@@ -67,11 +67,7 @@ namespace EsparkKartur.API.Controllers
 			{
 				return BadRequest(new { Hata = ex.Message });
 			}
-			/*catch (Exception)
-			{
-				return StatusCode(StatusCodes.Status500InternalServerError,
-					"Fiş oluşturulurken beklenmeyen bir hata oluştu.");
-			}*/
+	
 			catch (Exception ex)
 			{
 				return StatusCode(500, ex.ToString());
@@ -80,10 +76,7 @@ namespace EsparkKartur.API.Controllers
 		}
 
 
-		// ----------------------------------------------------------------------
-		// 2. SEVK FİŞİ RAPORU (GET)
-		// URL: GET api/SevkFisi/rapor?...
-		// ----------------------------------------------------------------------
+		
 		[HttpGet("rapor")]
 		[ProducesResponseType(typeof(List<SevkFisiResponse>), StatusCodes.Status200OK)]
 		public async Task<IActionResult> GetFisRapor([FromQuery] FisFiltreRequest filtre)

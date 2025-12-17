@@ -251,3 +251,4 @@ C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.API\bin\Debug\net10.0\E
 C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.API\bin\Debug\net10.0\EntityFrameworkCore.QueryBuilder.Abstractions.dll
 C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.API\bin\Debug\net10.0\LinqKit.Core.dll
 C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.API\bin\Debug\net10.0\LinqKit.Microsoft.EntityFrameworkCore.dll
+C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.API\obj\Debug\net10.0\EsparkKartur.API.sourcelink.json

@@ -63,3 +63,4 @@ C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Infrastructure\bin\Debu
 C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Infrastructure\bin\Debug\net10.0\BuildHost-netcore\zh-Hant\System.CommandLine.resources.dll
 C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Infrastructure\bin\Debug\net10.0\EsparkKartur.Infrastructure.runtimeconfig.json
 C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Infrastructure\obj\Debug\net10.0\EsparkKartur.Infrastructure.genruntimeconfig.cache
+C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.Infrastructure\obj\Debug\net10.0\EsparkKartur.Infrastructure.sourcelink.json

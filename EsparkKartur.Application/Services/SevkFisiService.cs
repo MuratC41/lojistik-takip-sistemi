@@ -25,94 +25,8 @@ namespace EsparkKartur.Infrastructure.Services
 
 		public async Task<SevkFisiResponse> GetSevkFisiByIdAsync(int fisId)
 		{
-			// ✅ GÜNCELLEME: Esnek sorgu yapısı için GetWithIncludesAsync kullanılıyor
-			var fis = await _fisRepository.GetWithIncludesAsync(
-				filter: f => f.Id == fisId,
-				include: query => query
-					// Basit/Tekil İlişkiler
-					.Include(f => f.Magaza)
-					.Include(f => f.Olusturan)
-					.Include(f => f.UrunDetaylari) // UrunDetaylari'nı ekliyoruz
-
-					// Çoktan Çoğa İlişkisi (Ara tablo üzerinden derin yükleme)
-					.Include(f => f.Kargoİlişkileri)          // Önce ara tabloyu yükle
-					.ThenInclude(fki => fki.KargoFirmasi)   // Ardından KargoFirmasi'nı yükle
-			);
-
-			if (fis == null) 
-			{
-				return null;
-			}
-
-
-			return new SevkFisiResponse
-			{
-				Id = fis.Id,
-				FişNumarasi = fis.FişNumarasi,
-				TarihSaat = fis.TarihSaat,
-				Fiyat = fis.Fiyat,
-				TeslimAlanAdSoyad = fis.TeslimAlanAdSoyad,
-
-				// 🔴 DOĞRU DÖNÜŞÜM (INT → ENUM → STRING)
-				Yon = ((SevkYon)fis.Yon).ToString().ToLower(),
-				GonderimModu = ((GonderimModu)fis.GonderimModu).ToString().ToLower(),
-				Durum = ((KayitDurum)fis.Durum).ToString().ToLower(),
-
-				// İLİŞKİSEL ALANLAR
-				MagazaAdi = fis.Magaza?.MagazaAdi ?? "",
-				PersonelAdSoyad = (fis.OlusturanID != null)
-						? fis.Olusturan.AdSoyad
-						: "",
-
-				KoliAdet = fis.UrunDetaylari?.KoliAdet ?? 0,
-				PaketAdet = fis.UrunDetaylari?.PaketAdet ?? 0,
-
-				KargoFirmalari = (fis.Kargoİlişkileri != null)
-		? string.Join(", ", fis.Kargoİlişkileri.Select(x => x.KargoFirmasi.FirmaAdi))
-		: ""
-			};
-
-		}
-
-		// ... (Geri kalan metotlar aynı kalır) ...
-		public async Task<SevkFisiResponse> CreateSevkFisiAsync(CreateSevkFisiRequest request)
-		{
-			// ✅ 1️⃣ AYNI FİŞ NUMARASI VAR MI KONTROLÜ
-			var fisNoVarMi = await _fisRepository
-				.AnyAsync(f => f.FişNumarasi == request.FişNumarasi);
-
-			if (fisNoVarMi)
-			{
-				throw new InvalidOperationException(
-					$"'{request.FişNumarasi}' numaralı sevk fişi zaten mevcut."
-				);
-			}
-
-			// ✅ 2️⃣ ENTITY OLUŞTUR
-			var fis = new SevkFisi
-			{
-				FişNumarasi = request.FişNumarasi,
-				MagazaId = request.MagazaId,
-				SeferId = request.SeferId,
-				OlusturanID = request.OlusturanID,
-
-				Yon = (int)EnumMapper.ToSevkYon(request.Yon),
-				GonderimModu = (int)EnumMapper.ToGonderimModu(request.GonderimModu),
-				Durum = (int)EnumMapper.ToDurum(request.Durum),
-
-				Fiyat = CalculatePrice(request),
-				TeslimAlanAdSoyad = request.TeslimAlanAdSoyad,
-				Aciklama = request.Aciklama,
-				TarihSaat = DateTime.Now
-			};
-
-			// ✅ 3️⃣ KAYDET
-			await _fisRepository.AddAsync(fis);
-			await _unitOfWork.SaveChangesAsync();
-
-			// 🔁 KAYDETTİKTEN SONRA FULL LOAD
 			var fullFis = await _fisRepository.GetWithIncludesAsync(
-				filter: f => f.Id == fis.Id,
+				filter: f => f.Id == fisId,
 				include: query => query
 					.Include(f => f.Magaza)
 					.Include(f => f.Olusturan)
@@ -121,17 +35,86 @@ namespace EsparkKartur.Infrastructure.Services
 						.ThenInclude(x => x.KargoFirmasi)
 			);
 
-			// ✅ 4️⃣ RESPONSE
+			if (fullFis == null) return null;
+
 			return new SevkFisiResponse
 			{
-				Id = fis.Id,
-				FişNumarasi = fis.FişNumarasi,
-				TarihSaat = fis.TarihSaat,
-				Fiyat = fis.Fiyat,
-				Durum = ((KayitDurum)fis.Durum).ToString().ToLower(),
-				Yon = ((SevkYon)fis.Yon).ToString().ToLower(),
-				GonderimModu = ((GonderimModu)fis.GonderimModu).ToString().ToLower()
+				Id = fullFis.Id,
+				FişNumarasi = fullFis.FişNumarasi,
+				TarihSaat = fullFis.TarihSaat,
+				Fiyat = fullFis.Fiyat,
+
+				// Enum dönüşümleri (Data null ise hata vermemesi için cast kontrolü)
+				Durum = ((KayitDurum)fullFis.Durum).ToString().ToLower(),
+				Yon = ((SevkYon)fullFis.Yon).ToString().ToLower(),
+				GonderimModu = ((GonderimModu)fullFis.GonderimModu).ToString().ToLower(),
+
+				// Null-Conditional Operator (?.) kullanımı - EĞER TABLO BOŞSA HATA VERMEZ
+				MagazaAdi = fullFis.Magaza?.MagazaAdi ?? "Mağaza Belirtilmemiş",
+				PersonelAdSoyad = fullFis.Olusturan?.AdSoyad ?? "Bilinmiyor",
+				TeslimAlanAdSoyad = fullFis.TeslimAlanAdSoyad,
+
+				// UrunDetaylari tablosu boşsa 0 döndür
+				KoliAdet = fullFis.UrunDetaylari?.KoliAdet ?? 0,
+				PaketAdet = fullFis.UrunDetaylari?.PaketAdet ?? 0,
+
+				KargoFirmalari = fullFis.Kargoİlişkileri != null
+					? string.Join(", ", fullFis.Kargoİlişkileri.Select(x => x.KargoFirmasi?.FirmaAdi))
+					: string.Empty,
+
+				ImzaDosyasi = fullFis.ImzaDosyasi
 			};
+		}
+
+
+
+
+		// ... (Geri kalan metotlar aynı kalır) ...
+		public async Task<SevkFisiResponse> CreateSevkFisiAsync(CreateSevkFisiRequest request)
+		{
+			// 1. Aynı fiş numarası kontrolü
+			var fisNoVarMi = await _fisRepository.AnyAsync(f => f.FişNumarasi == request.FişNumarasi);
+			if (fisNoVarMi)
+				throw new InvalidOperationException($"'{request.FişNumarasi}' numaralı sevk fişi zaten mevcut.");
+
+			// 2. Ana Sevk Fişi Entity'sini Oluştur
+			var fis = new SevkFisi
+			{
+				FişNumarasi = request.FişNumarasi,
+				MagazaId = request.MagazaId,
+				OlusturanID = request.OlusturanID,
+				SeferId = request.SeferId,
+				Yon = (int)EnumMapper.ToSevkYon(request.Yon),
+				GonderimModu = (int)EnumMapper.ToGonderimModu(request.GonderimModu),
+				Durum = (int)EnumMapper.ToDurum(request.Durum),
+				Fiyat = CalculatePrice(request),
+				TeslimAlanAdSoyad = request.TeslimAlanAdSoyad,
+				Aciklama = request.Aciklama,
+				TarihSaat = DateTime.Now,
+
+				// --- İLİŞKİSEL VERİLERİ BURADA BAĞLIYORUZ ---
+
+				// Ürün Detaylarını (Koli/Paket) ekle
+				UrunDetaylari = new FisUrunleri
+				{
+					KoliAdet = request.KoliAdet,
+					PaketAdet = request.PaketAdet
+				}
+			};
+			// SevkFisiService.cs içinde, AddAsync işleminden önce
+			if (request.KargoFirmasiIds != null && request.KargoFirmasiIds.Any())
+			{
+				fis.Kargoİlişkileri = request.KargoFirmasiIds.Select(id => new FisKargo
+				{
+					KargoFirmaId = id
+				}).ToList();
+			}
+			// 3. Veritabanına Ekle (EF Core, FisUrunleri'ni otomatik olarak FisID ile bağlayıp kaydedecektir)
+			await _fisRepository.AddAsync(fis);
+			await _unitOfWork.SaveChangesAsync();
+
+			// 4. Response Dön (Full veri ile)
+			return await GetSevkFisiByIdAsync(fis.Id);
 		}
 		private decimal CalculatePrice(CreateSevkFisiRequest request)
 		{
@@ -155,9 +138,6 @@ namespace EsparkKartur.Infrastructure.Services
 
 			throw new InvalidOperationException("Geçersiz gönderim modu.");
 		}
-
-
-
 
 
 		public Task<List<SevkFisiResponse>> GetFisRaporAsync(FisFiltreRequest filtre)

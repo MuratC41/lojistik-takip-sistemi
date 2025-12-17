@@ -18,5 +18,7 @@
 		public int KoliAdet { get; set; }
 		public int PaketAdet { get; set; }
 		public string KargoFirmalari { get; set; } // Virgülle ayrılmış firma isimleri
+		public string ImzaDosyasi { get; set; }
+
 	}
 }

@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EsparkKartur.Domain.Entities
 {
+	[Table("SevkFisleri")]
 	public class SevkFisi
 	{
 		[Key]
@@ -29,8 +30,8 @@ namespace EsparkKartur.Domain.Entities
 
 		[Column("TeslimAlan")]
 		public string TeslimAlanAdSoyad { get; set; }
-		public string Aciklama { get; set; }
-		public string ImzaDosyasi { get; set; }
+		public string? Aciklama { get; set; }
+		public string? ImzaDosyasi { get; set; }
 		public DateTime TarihSaat { get; set; }
 		public int Durum { get; set; }
 
