@@ -10,6 +10,11 @@ namespace EsparkKartur.Application.Services
 		Task<SevkFisiResponse> CreateSevkFisiAsync(CreateSevkFisiRequest request);
 		Task<List<SevkFisiResponse>> GetFisRaporAsync(FisFiltreRequest filtre);
 		Task<bool> KayitTamamlaMobilImzaAsync(int fisId, string imzaDosyasiBase64);
+		// kullanıcı id için metod imzası
 		Task<List<SevkFisiResponse>> GetSevkFisleriByKullaniciIdAsync(int kullaniciId);
+		// Mağaza id için metod imzası
+		Task<List<SevkFisiResponse>> GetSevkFisleriByMagazaIdAsync(int magazaId);
+		//tarih aralığına göre
+		Task<List<SevkFisiResponse>> GetSevkFisleriByTarihAraligiAsync(DateTime startDate, DateTime endDate);
 	}
 }

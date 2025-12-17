@@ -30,7 +30,5 @@ namespace EsparkKartur.Domain.Entities
 		public bool AktifMi { get; set; } = true;
 
 		public DateTime OlusturmaTarihi { get; set; }
-
-		public ICollection<Sefer> Seferler { get; set; }
 	}
 }

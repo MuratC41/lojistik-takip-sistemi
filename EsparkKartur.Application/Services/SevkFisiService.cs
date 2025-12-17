@@ -73,13 +73,22 @@ namespace EsparkKartur.Infrastructure.Services
 			if (fisNoVarMi)
 				throw new InvalidOperationException($"'{request.FişNumarasi}' numaralı sevk fişi zaten mevcut.");
 
-			// 2. Ana Sevk Fişi Entity'sini Oluştur
+			// 2. OTOMATİK SEFER OLUŞTURMA
+			// Kullanıcıdan seferId almıyoruz, fişle beraber yeni bir sefer başlatıyoruz.
+			var yeniSefer = new SevkFisi
+			{
+				OlusturanID = request.OlusturanID,
+				TarihSaat = DateTime.Now,
+				Yon = (int)EnumMapper.ToSevkYon(request.Yon),
+				Durum = (int)EnumMapper.ToDurum(request.Durum),
+			};
+
+			// 3. ANA SEVK FİŞİ ENTITY'SİNİ OLUŞTUR
 			var fis = new SevkFisi
 			{
 				FişNumarasi = request.FişNumarasi,
 				MagazaId = request.MagazaId,
 				OlusturanID = request.OlusturanID,
-				SeferId = request.SeferId,
 				Yon = (int)EnumMapper.ToSevkYon(request.Yon),
 				GonderimModu = (int)EnumMapper.ToGonderimModu(request.GonderimModu),
 				Durum = (int)EnumMapper.ToDurum(request.Durum),
@@ -87,29 +96,32 @@ namespace EsparkKartur.Infrastructure.Services
 				TeslimAlanAdSoyad = request.TeslimAlanAdSoyad,
 				Aciklama = request.Aciklama,
 				TarihSaat = DateTime.Now,
+				ImzaDosyasi = request.ImzaDosyasi,
 
-				// --- İLİŞKİSEL VERİLERİ BURADA BAĞLIYORUZ ---
-
-				// Ürün Detaylarını (Koli/Paket) ekle
+				// Ürün Detaylarını (FisUrunleri tablosu) bağla
 				UrunDetaylari = new FisUrunleri
 				{
 					KoliAdet = request.KoliAdet,
 					PaketAdet = request.PaketAdet
 				}
 			};
-			// SevkFisiService.cs içinde, AddAsync işleminden önce
+
+			// 4. KARGO FİRMASI İLİŞKİLERİNİ BAĞLA (FisKargo tablosu)
 			if (request.KargoFirmasiIds != null && request.KargoFirmasiIds.Any())
 			{
 				fis.Kargoİlişkileri = request.KargoFirmasiIds.Select(id => new FisKargo
 				{
 					KargoFirmaId = id
+					// FisID ataması otomatik yapılacak
 				}).ToList();
 			}
-			// 3. Veritabanına Ekle (EF Core, FisUrunleri'ni otomatik olarak FisID ile bağlayıp kaydedecektir)
+
+			// 5. VERİTABANINA KAYDET
+			// Tek bir AddAsync ve SaveChanges ile hem Sefer, hem Fiş, hem de alt tablolar kaydedilir.
 			await _fisRepository.AddAsync(fis);
 			await _unitOfWork.SaveChangesAsync();
 
-			// 4. Response Dön (Full veri ile)
+			// 6. RESPONSE DÖN (Tüm detaylar ve yeni ID'ler ile beraber)
 			return await GetSevkFisiByIdAsync(fis.Id);
 		}
 
@@ -178,7 +190,68 @@ namespace EsparkKartur.Infrastructure.Services
 				ImzaDosyasi = fullFis.ImzaDosyasi
 			}).ToList();
 		}
+		
+		//magaza id ile olusturdugu fisleri filtreleme
+		public async Task<List<SevkFisiResponse>> GetSevkFisleriByMagazaIdAsync(int magazaId)
+		{
+			// Repository üzerinden MağazaID'ye göre filtreleyip ilişkili tabloları çekiyoruz
+			var fisler = await _fisRepository.GetListWithIncludesAsync(
+				filter: f => f.MagazaId == magazaId, // Sadece bu satırı değiştirdik
+				include: query => query
+					.Include(f => f.Magaza)
+					.Include(f => f.Olusturan)
+					.Include(f => f.UrunDetaylari)
+					.Include(f => f.Kargoİlişkileri)
+						.ThenInclude(x => x.KargoFirmasi)
+			);
 
+			if (fisler == null) return new List<SevkFisiResponse>();
+
+			// Mapping mantığı aynı, çalışan kodu buraya da kopyalıyoruz
+			return fisler.Select(fullFis => new SevkFisiResponse
+			{
+				Id = fullFis.Id,
+				FişNumarasi = fullFis.FişNumarasi,
+				TarihSaat = fullFis.TarihSaat,
+				Fiyat = fullFis.Fiyat,
+
+				Durum = ((KayitDurum)fullFis.Durum).ToString().ToLower(),
+				Yon = ((SevkYon)fullFis.Yon).ToString().ToLower(),
+				GonderimModu = ((GonderimModu)fullFis.GonderimModu).ToString().ToLower(),
+
+				MagazaAdi = fullFis.Magaza?.MagazaAdi ?? "Mağaza Belirtilmemiş",
+				PersonelAdSoyad = fullFis.Olusturan?.AdSoyad ?? "Bilinmiyor",
+				TeslimAlanAdSoyad = fullFis.TeslimAlanAdSoyad,
+
+				KoliAdet = fullFis.UrunDetaylari?.KoliAdet ?? 0,
+				PaketAdet = fullFis.UrunDetaylari?.PaketAdet ?? 0,
+
+				KargoFirmalari = fullFis.Kargoİlişkileri != null
+					? string.Join(", ", fullFis.Kargoİlişkileri.Select(x => x.KargoFirmasi?.FirmaAdi))
+					: string.Empty,
+
+				ImzaDosyasi = fullFis.ImzaDosyasi
+			}).ToList();
+		}
+		//tarih aralığına göre
+		public async Task<List<SevkFisiResponse>> GetSevkFisleriByTarihAraligiAsync(DateTime startDate, DateTime endDate)
+		{
+			// Filtre: Tarih, startDate'den büyük/eşit VE endDate'den küçük/eşit olmalı
+			var fisler = await _fisRepository.GetListWithIncludesAsync(
+				filter: f => f.TarihSaat >= startDate && f.TarihSaat <= endDate,
+				include: query => query
+					.Include(f => f.Magaza)
+					.Include(f => f.Olusturan)
+					.Include(f => f.UrunDetaylari)
+					.Include(f => f.Kargoİlişkileri)
+						.ThenInclude(x => x.KargoFirmasi)
+			);
+
+			if (fisler == null) return new List<SevkFisiResponse>();
+
+			// Az önce yaptığımız MapToResponse metodun varsa onu kullan, yoksa uzun Select bloğunu yapıştır:
+			return fisler.Select(f => MapToResponse(f)).ToList();
+		}
 		public Task<bool> KayitTamamlaMobilImzaAsync(int fisId, string imzaDosyasiBase64)
 		{
 			throw new NotImplementedException();
@@ -188,6 +261,35 @@ namespace EsparkKartur.Infrastructure.Services
 		{
 			// Hata vermemesi için şimdilik boş bir liste dönelim
 			return new List<SevkFisiResponse>();
+		}
+		private SevkFisiResponse MapToResponse(SevkFisi fullFis)
+		{
+			return new SevkFisiResponse
+			{
+				Id = fullFis.Id,
+				FişNumarasi = fullFis.FişNumarasi,
+				TarihSaat = fullFis.TarihSaat,
+				Fiyat = fullFis.Fiyat,
+
+				// Enum dönüşümleri
+				Durum = ((KayitDurum)fullFis.Durum).ToString().ToLower(),
+				Yon = ((SevkYon)fullFis.Yon).ToString().ToLower(),
+				GonderimModu = ((GonderimModu)fullFis.GonderimModu).ToString().ToLower(),
+
+				// Null kontrolleri
+				MagazaAdi = fullFis.Magaza?.MagazaAdi ?? "Mağaza Belirtilmemiş",
+				PersonelAdSoyad = fullFis.Olusturan?.AdSoyad ?? "Bilinmiyor",
+				TeslimAlanAdSoyad = fullFis.TeslimAlanAdSoyad,
+
+				KoliAdet = fullFis.UrunDetaylari?.KoliAdet ?? 0,
+				PaketAdet = fullFis.UrunDetaylari?.PaketAdet ?? 0,
+
+				KargoFirmalari = fullFis.Kargoİlişkileri != null
+					? string.Join(", ", fullFis.Kargoİlişkileri.Select(x => x.KargoFirmasi?.FirmaAdi))
+					: string.Empty,
+
+				ImzaDosyasi = fullFis.ImzaDosyasi
+			};
 		}
 	}
 }

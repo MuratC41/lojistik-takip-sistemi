@@ -19,10 +19,6 @@ namespace EsparkKartur.Domain.Entities
 		// ❗ DÜZELTME 1: Yabancı Anahtar (FK) Olarak Kullanıcının ID'si (int) tanımlanmalı.
 		[Column("OlusturanID")]
 		public int OlusturanID { get; set; }
-
-		[Column("SeferID")]
-		public int SeferId { get; set; }
-
 		public int Yon { get; set; }
 
 		public int GonderimModu { get; set; }
@@ -41,12 +37,8 @@ namespace EsparkKartur.Domain.Entities
 		// Bu, Service katmanındaki `f => f.Olusturan` Include çağrısını destekler.
 		public Kullanici Olusturan { get; set; }
 
-		public Sefer Sefer { get; set; }
-		
-
 		[ForeignKey(nameof(MagazaId))]
 		public Magaza Magaza { get; set; }
-
 
 		// 1-1 İlişki
 		public FisUrunleri UrunDetaylari { get; set; }

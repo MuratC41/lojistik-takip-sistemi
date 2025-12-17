@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EsparkKartur.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9b92c892477d02b0f5b44ec9953798cc209f02b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+038a4402b93c65f2fb959c4c6c5102fc69964429")]
 [assembly: System.Reflection.AssemblyProductAttribute("EsparkKartur.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EsparkKartur.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -7,12 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EsparkKartur.API.Controllers
 {
-
-	
-
-
-
-
 	[Route("api/[controller]")]
 	[ApiController]
 	public class SevkFisiController : ControllerBase
@@ -24,10 +18,7 @@ namespace EsparkKartur.API.Controllers
 			_sevkFisiService = sevkFisiService;
 		}
 
-		// ----------------------------------------------------------------------
-		// 0. ID'YE GÖRE TEK SEVK FİŞİ GETİRME (GET) - EKLENDİ
-		// URL: GET api/SevkFisi/{fisId}  (Örn: api/SevkFisi/5001)
-		// ----------------------------------------------------------------------
+		// 0. fisID'YE GÖRE TEK SEVK FİŞİ GETİRME (GET) 
 		[HttpGet("{fisId}")]
 		[ProducesResponseType(typeof(SevkFisiResponse), StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -44,10 +35,7 @@ namespace EsparkKartur.API.Controllers
 			return Ok(fis);
 		}
 
-		// ----------------------------------------------------------------------
 		// 1. SEVK FİŞİ OLUŞTURMA (POST)
-		// URL: POST api/SevkFisi
-		// ----------------------------------------------------------------------
 		[HttpPost]
 		[ProducesResponseType(typeof(SevkFisiResponse), StatusCodes.Status201Created)]
 		[ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -83,8 +71,16 @@ namespace EsparkKartur.API.Controllers
 
 		}
 
+		// 3. magazaID'YE GÖRE TEK SEVK FİŞİ GETİRME (GET) 
+		[HttpGet("magaza/{magazaId}")] 
+		public async Task<IActionResult> GetByMagazaId(int magazaId)
+		{
+			var result = await _sevkFisiService.GetSevkFisleriByMagazaIdAsync(magazaId);
 
-		
+			// Liste boş olsa bile 200 döner (boş liste olarak), veri varsa dolu döner.
+			return Ok(result);
+		}
+
 		[HttpGet("rapor")]
 		[ProducesResponseType(typeof(List<SevkFisiResponse>), StatusCodes.Status200OK)]
 		public async Task<IActionResult> GetFisRapor([FromQuery] FisFiltreRequest filtre)
@@ -93,7 +89,7 @@ namespace EsparkKartur.API.Controllers
 			return Ok(rapor);
 		}
 
-
+		// 4.kullanıcı ID'YE GÖRE TEK SEVK FİŞİ GETİRME (GET) 
 		[HttpGet("user/{kullaniciId}")]
 		public async Task<IActionResult> GetByKullaniciId(int kullaniciId)
 		{
@@ -105,10 +101,14 @@ namespace EsparkKartur.API.Controllers
 			return Ok(result);
 		}
 
-		// ----------------------------------------------------------------------
+		//tarih aralıgı
+		[HttpGet("tarih-araligi")] // api/SevkFisi/tarih-araligi?startDate=2025-01-01&endDate=2025-02-01
+		public async Task<IActionResult> GetByTarihAraligi([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
+		{
+			var result = await _sevkFisiService.GetSevkFisleriByTarihAraligiAsync(startDate, endDate);
+			return Ok(result);
+		}
 		// 3. TESLİMAT TAMAMLAMA (PUT)
-		// URL: PUT api/SevkFisi/{fisId}/tamamla
-		// ----------------------------------------------------------------------
 		[HttpPut("{fisId}/tamamla")]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]

@@ -17,7 +17,6 @@ namespace EsparkKartur.Infrastructure.Context
 		public DbSet<Kullanici> Kullanicilar { get; set; }
 		public DbSet<Magaza> Magazalar { get; set; }
 		public DbSet<KargoFirmasi> KargoFirmalari { get; set; }
-		public DbSet<Sefer> Seferler { get; set; }
 		public DbSet<SevkFisi> SevkFisleri { get; set; }
 		public DbSet<FisUrunleri> FisUrunleri { get; set; }
 		public DbSet<FisKargo> FisKargo { get; set; }

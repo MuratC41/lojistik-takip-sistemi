@@ -2,7 +2,7 @@
 
 namespace EsparkKartur.Application.Repositories
 {
-	public interface ISeferRepository : IEntityRepository<Sefer>
+	public interface ISeferRepository : IEntityRepository<SevkFisi>
 	{
 		// Seferler için özel metotlar buraya gelebilir (Örn: Seferleri Tamamlanma Durumuna Göre Filtrele)
 	}

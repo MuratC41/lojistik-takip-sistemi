@@ -11,10 +11,6 @@ namespace EsparkKartur.Application.DTOs.SevkFisi
 		[Required(ErrorMessage = "Mağaza seçimi zorunludur.")]
 		public int MagazaId { get; set; }
 
-		// 2. Sefer ID (Zaten Vardı)
-		[Required(ErrorMessage = "Sefer ID zorunludur.")]
-		public int SeferId { get; set; }
-
 		// 3. OLUŞTURAN ID (LOG HATASINDAN DOLAYI EKLENDİ)
 		// Bu alan, kaydı oluşturan kullanıcının ID'sidir ve DB'de NOT NULL'dır.
 		[Required(ErrorMessage = "Oluşturan kullanıcı ID'si zorunludur.")]
@@ -46,10 +42,6 @@ namespace EsparkKartur.Application.DTOs.SevkFisi
 		public string TeslimAlanAdSoyad { get; set; }
 
 		public string? ImzaDosyasi { get; set; }
-
-		// TarihSaat (Genellikle DB'de DEFAULT datetime('now') vardır, ancak API'dan göndermek isteyebilirsiniz.)
-		public DateTime TarihSaat { get; set; } = DateTime.Now;
-
 
 		// --- İLİŞKİLİ ALANLAR ---
 
