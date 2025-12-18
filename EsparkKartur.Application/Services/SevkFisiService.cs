@@ -3,7 +3,6 @@ using EsparkKartur.Application.Constants;
 using EsparkKartur.Application.DTOs.SevkFisi;
 using EsparkKartur.Application.Enums;
 using EsparkKartur.Application.Repositories;
-using EsparkKartur.Application.Services;
 using EsparkKartur.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
@@ -256,7 +255,6 @@ namespace EsparkKartur.Infrastructure.Services
 		{
 			throw new NotImplementedException();
 		}
-		// SevkFisiService.cs içindeki metodun imzasını şu şekilde güncelle:
 		public async Task<List<SevkFisiResponse>> GetFisRaporAsync(FisFiltreRequest request)
 		{
 			// Hata vermemesi için şimdilik boş bir liste dönelim

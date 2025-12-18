@@ -1,7 +1,6 @@
 ﻿using EsparkKartur.Application;
 using EsparkKartur.Application.DTOs.SevkFisi;
 using EsparkKartur.Application.Repositories;
-using EsparkKartur.Application.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

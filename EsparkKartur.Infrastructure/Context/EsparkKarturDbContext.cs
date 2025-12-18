@@ -12,7 +12,6 @@ namespace EsparkKartur.Infrastructure.Context
 		public EsparkKarturDbContext(DbContextOptions<EsparkKarturDbContext> options) : base(options) { }
 
 		// DbSet Tanımlamaları 
-		public DbSet<Tarife> Tarifeler { get; set; }
 		public DbSet<AuditTrail> AuditTrails { get; set; }
 		public DbSet<Kullanici> Kullanicilar { get; set; }
 		public DbSet<Magaza> Magazalar { get; set; }
