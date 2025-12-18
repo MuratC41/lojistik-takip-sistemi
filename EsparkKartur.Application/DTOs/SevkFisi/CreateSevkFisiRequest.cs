@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema; // Column attribute'ü kullanılabilir
+using System.ComponentModel.DataAnnotations.Schema; 
 
 namespace EsparkKartur.Application.DTOs.SevkFisi
 {
@@ -27,9 +27,6 @@ namespace EsparkKartur.Application.DTOs.SevkFisi
 		[StringLength(50)]
 		public string Yon { get; set; }
 
-
-		// --- DİĞER ALANLAR (DB'de NOT NULL olabilir) ---
-
 		// Gonderim modu: DB'de 'arac_bazli' veya 'parca_bazli' stringleri bekleniyor.
 		// DTO'da bunu int'ten string'e çevirdim.
 		[Required(ErrorMessage = "Gönderim modu seçimi zorunludur.")]
@@ -45,7 +42,7 @@ namespace EsparkKartur.Application.DTOs.SevkFisi
 
 		// --- İLİŞKİLİ ALANLAR ---
 
-		// Ürün Detayları (DB'de ayrı bir tabloya yazılıyorsa DTO'da olabilir)
+		// Ürün Detayları 
 		[Range(0, int.MaxValue, ErrorMessage = "Koli adedi negatif olamaz.")]
 		public int KoliAdet { get; set; } = 0;
 
@@ -55,7 +52,6 @@ namespace EsparkKartur.Application.DTOs.SevkFisi
 
 		public string? Aciklama { get; set; }
 
-		// İlişkili Alanlar
 		[Required(ErrorMessage = "En az bir kargo firması seçimi zorunludur.")]
 		public List<int> KargoFirmasiIds { get; set; }
 	}

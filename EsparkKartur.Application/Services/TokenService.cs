@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt; // 👈 KRİTİK: Bu satırı mutlaka ekle!
+using System.IdentityModel.Tokens.Jwt; 
 using System.Security.Claims;
 using System.Text;
 
@@ -20,7 +20,6 @@ namespace EsparkKartur.Application.Services
 			var claims = new List<Claim> {
 				new Claim(ClaimTypes.NameIdentifier, kullanici.Id.ToString()),
 				new Claim(ClaimTypes.Name, kullanici.KullaniciAdi),
-                // ❗ .ToString() ekledik çünkü Rol bir Enum
                 new Claim(ClaimTypes.Role, kullanici.Rol.ToString())
 			};
 
@@ -35,7 +34,6 @@ namespace EsparkKartur.Application.Services
 				SigningCredentials = creds
 			};
 
-			// 👈 Buradaki JwtSecurityTokenHandler artık yukarıdaki 'using' sayesinde doğru çalışacak
 			var tokenHandler = new JwtSecurityTokenHandler();
 			var token = tokenHandler.CreateToken(tokenDescriptor);
 

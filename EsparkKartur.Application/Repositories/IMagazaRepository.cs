@@ -6,8 +6,5 @@ using EsparkKartur.Domain.Entities;
 
 namespace EsparkKartur.Application.Repositories
 {
-	public interface IMagazaRepository : IEntityRepository<Magaza>
-	{
-		// Mağazaya özel metotlar gerekirse buraya eklenebilir.
-	}
+	public interface IMagazaRepository : IEntityRepository<Magaza>{}
 }

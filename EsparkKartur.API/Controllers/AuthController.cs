@@ -21,7 +21,6 @@ namespace EsparkKartur.API.Controllers
 		[HttpPost("register")]
 		public async Task<ActionResult<AuthResponse>> RegisterAsync(RegisterRequest request)
 		{
-			// Servis içindeki metot isminin RegisterAsync olduðuna emin ol
 			var result = await _authService.RegisterAsync(request);
 			return Ok(result);
 		}
@@ -29,7 +28,6 @@ namespace EsparkKartur.API.Controllers
 		[HttpPost("login")]
 		public async Task<ActionResult<AuthResponse>> LoginAsync(LoginRequest request)
 		{
-			// Servis içindeki metot isminin LoginAsync olduðuna emin ol
 			var result = await _authService.LoginAsync(request);
 			return Ok(result);
 		}

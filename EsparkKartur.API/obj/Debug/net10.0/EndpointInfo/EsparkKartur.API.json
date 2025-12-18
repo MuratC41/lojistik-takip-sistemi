@@ -267,77 +267,6 @@
         }
       }
     },
-    "/api/SevkFisi/rapor": {
-      "get": {
-        "tags": [
-          "SevkFisi"
-        ],
-        "parameters": [
-          {
-            "name": "MagazaId",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "BaslangicTarihi",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "BitisTarihi",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "Durum",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SevkFisiResponse"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SevkFisiResponse"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SevkFisiResponse"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/SevkFisi/user/{kullaniciId}": {
       "get": {
         "tags": [
@@ -387,68 +316,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/SevkFisi/{fisId}/tamamla": {
-      "put": {
-        "tags": [
-          "SevkFisi"
-        ],
-        "parameters": [
-          {
-            "name": "fisId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TamamlaRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TamamlaRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/TamamlaRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
           }
         }
       }
@@ -669,19 +536,6 @@
           "imzaDosyasi": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "TamamlaRequest": {
-        "required": [
-          "imzaDosyasiBase64"
-        ],
-        "type": "object",
-        "properties": {
-          "imzaDosyasiBase64": {
-            "minLength": 1,
-            "type": "string"
           }
         },
         "additionalProperties": false

@@ -9,8 +9,6 @@
 		public string MagazaAdi { get; set; }
 		public string PersonelAdSoyad { get; set; }
 		public string TeslimAlanAdSoyad { get; set; }
-
-		// Artık int/string olarak döndürülecek
 		public string GonderimModu { get; set; }
 		public string Yon { get; set; }
 		public decimal Fiyat { get; set; } // Otomatik hesaplanmış fiyat

@@ -1,6 +1,5 @@
 ﻿using System.Linq.Expressions;
 using EsparkKartur.Domain.Entities;
-// ✅ GEREKLİ EKLEME
 using Microsoft.EntityFrameworkCore.Query;
 
 namespace EsparkKartur.Application.Repositories
@@ -19,7 +18,7 @@ namespace EsparkKartur.Application.Repositories
 			params Expression<Func<T, object>>[] includeProperties
 		);
 
-		// ✅ YENİ METOT: ThenInclude (zincirleme) yüklemeye izin verir.
+		// ThenInclude (zincirleme) yüklemeye izin verir.
 		Task<T> GetWithIncludesAsync(
 			Expression<Func<T, bool>> filter,
 			Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null

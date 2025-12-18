@@ -138,42 +138,6 @@
   },
   {
     "ContainingType": "EsparkKartur.API.Controllers.SevkFisiController",
-    "Method": "Tamamla",
-    "RelativePath": "api/SevkFisi/{fisId}/tamamla",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "fisId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "request",
-        "Type": "EsparkKartur.Application.DTOs.SevkFisi.TamamlaRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      }
-    ]
-  },
-  {
-    "ContainingType": "EsparkKartur.API.Controllers.SevkFisiController",
     "Method": "GetByMagazaId",
     "RelativePath": "api/SevkFisi/magaza/{magazaId}",
     "HttpMethod": "GET",
@@ -187,47 +151,6 @@
       }
     ],
     "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EsparkKartur.API.Controllers.SevkFisiController",
-    "Method": "GetFisRapor",
-    "RelativePath": "api/SevkFisi/rapor",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "MagazaId",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "BaslangicTarihi",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "BitisTarihi",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "Durum",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[EsparkKartur.Application.DTOs.SevkFisi.SevkFisiResponse, EsparkKartur.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
   },
   {
     "ContainingType": "EsparkKartur.API.Controllers.SevkFisiController",

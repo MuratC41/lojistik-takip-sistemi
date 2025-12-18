@@ -4,8 +4,6 @@ using System.Text;
 
 namespace EsparkKartur.Application.DTOs.Auth
 {
-	// AuthDtos yazan o internal satırı sildik.
-	// Sınıfları doğrudan buraya, public olarak koyuyoruz.
 
 	public class LoginRequest
 	{

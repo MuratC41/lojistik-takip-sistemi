@@ -80,14 +80,6 @@ namespace EsparkKartur.API.Controllers
 			return Ok(result);
 		}
 
-		[HttpGet("rapor")]
-		[ProducesResponseType(typeof(List<SevkFisiResponse>), StatusCodes.Status200OK)]
-		public async Task<IActionResult> GetFisRapor([FromQuery] FisFiltreRequest filtre)
-		{
-			var rapor = await _sevkFisiService.GetFisRaporAsync(filtre);
-			return Ok(rapor);
-		}
-
 		// 4.kullanıcı ID'YE GÖRE TEK SEVK FİŞİ GETİRME (GET) 
 		[HttpGet("user/{kullaniciId}")]
 		public async Task<IActionResult> GetByKullaniciId(int kullaniciId)
@@ -100,31 +92,13 @@ namespace EsparkKartur.API.Controllers
 			return Ok(result);
 		}
 
-		//tarih aralıgı
+		//4.tarih aralıgı
 		[HttpGet("tarih-araligi")] // api/SevkFisi/tarih-araligi?startDate=2025-01-01&endDate=2025-02-01
 		public async Task<IActionResult> GetByTarihAraligi([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
 		{
 			var result = await _sevkFisiService.GetSevkFisleriByTarihAraligiAsync(startDate, endDate);
 			return Ok(result);
 		}
-		// 3. TESLİMAT TAMAMLAMA (PUT)
-		[HttpPut("{fisId}/tamamla")]
-		[ProducesResponseType(StatusCodes.Status200OK)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		public async Task<IActionResult> Tamamla(int fisId, [FromBody] TamamlaRequest request)
-		{
-			var success = await _sevkFisiService
-				.KayitTamamlaMobilImzaAsync(fisId, request.ImzaDosyasiBase64);
-
-			if (success)
-			{
-				return Ok(new { Message = "Teslimat kaydı başarıyla tamamlandı." });
-			}
-
-			return NotFound(new
-			{
-				Message = "Belirtilen fiş bulunamadı veya daha önce tamamlanmış."
-			});
-		}
+		
 	}
 }

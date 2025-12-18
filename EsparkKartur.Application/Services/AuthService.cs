@@ -34,19 +34,15 @@ namespace EsparkKartur.Application.Services
 			var user = new Kullanici
 			{
 				KullaniciAdi = request.KullaniciAdi,
-				AdSoyad = request.AdSoyad,
-
-				// ❗ DİKKAT 1: Rol alanı Enum (KullaniciRol) bekliyor. 
+				AdSoyad = request.AdSoyad, 
 				// request.Rol string ise Enum'a çeviriyoruz.
 				Rol = Enum.Parse<KullaniciRol>(request.Rol),
 
 				SifreHash = Convert.ToBase64String(hash),
 				SifreSalt = Convert.ToBase64String(salt),
 
-				// ❗ DİKKAT 2: Sende 'Durum' kolonu 'AktifMi' ismine bağlanmış.
 				AktifMi = true,
 
-				// ❗ DİKKAT 3: Senin entity'nde adı 'OlusturmaTarihi' (U harfi yok)
 				OlusturmaTarihi = DateTime.Now
 			};
 

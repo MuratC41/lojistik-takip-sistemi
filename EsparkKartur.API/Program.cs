@@ -12,28 +12,19 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// -------------------------------------------------
 // 1️⃣ DbContext (SQLite)
-// -------------------------------------------------
-builder.Services.AddDbContext<EsparkKarturDbContext>(options =>
-	options.UseSqlite(
-		builder.Configuration.GetConnectionString("DefaultConnection")
-	)
-);
+builder.Services.AddDbContext<EsparkKarturDbContext>(options =>options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// -------------------------------------------------
 // 2️⃣ Repository'ler
-// -------------------------------------------------
 builder.Services.AddScoped<ISevkFisiRepository, EfSevkFisiRepository>();
 
-// ❗ KRİTİK: Auth işlemleri için Kullanıcı Repository'sini aktif ettik
+//Auth işlemleri için Kullanıcı Repository'sini aktif ettik
 builder.Services.AddScoped<IKullaniciRepository, EfKullaniciRepository>();
 builder.Services.AddScoped<IMagazaRepository, EfMagazaRepository>();
 builder.Services.AddScoped<IKargoRepository, EfKargoRepository>();
 
-// -------------------------------------------------
+
 // 3️⃣ UnitOfWork & Uygulama Servisleri
-// -------------------------------------------------
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ISevkFisiService, SevkFisiService>();
 
@@ -41,9 +32,7 @@ builder.Services.AddScoped<ISevkFisiService, SevkFisiService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 
-// -------------------------------------------------
 // 🔐 4️⃣ JWT Authentication (Kimlik Doğrulama) Ayarları
-// -------------------------------------------------
 // appsettings.json içindeki "TokenKey"i okuyoruz
 var tokenKey = builder.Configuration["TokenKey"];
 if (string.IsNullOrEmpty(tokenKey))
@@ -71,9 +60,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// -------------------------------------------------
-// 5️⃣ Middleware (Sıralama Değişmez!)
-// -------------------------------------------------
+// 5️⃣ Middleware (Swagger)
 if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
 	app.UseSwagger();
@@ -85,8 +72,6 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 }
 
 app.UseHttpsRedirection();
-
-// ❗ ÖNEMLİ SIRALAMA:
 app.UseAuthentication(); // 1. Sen kimsin? (Token kontrolü)
 app.UseAuthorization();  // 2. Yetkin var mı? (Rol kontrolü)
 app.MapControllers();

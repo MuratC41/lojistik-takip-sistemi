@@ -251,15 +251,6 @@ namespace EsparkKartur.Infrastructure.Services
 			// Az önce yaptığımız MapToResponse metodun varsa onu kullan, yoksa uzun Select bloğunu yapıştır:
 			return fisler.Select(f => MapToResponse(f)).ToList();
 		}
-		public Task<bool> KayitTamamlaMobilImzaAsync(int fisId, string imzaDosyasiBase64)
-		{
-			throw new NotImplementedException();
-		}
-		public async Task<List<SevkFisiResponse>> GetFisRaporAsync(FisFiltreRequest request)
-		{
-			// Hata vermemesi için şimdilik boş bir liste dönelim
-			return new List<SevkFisiResponse>();
-		}
 		private SevkFisiResponse MapToResponse(SevkFisi fullFis)
 		{
 			return new SevkFisiResponse
