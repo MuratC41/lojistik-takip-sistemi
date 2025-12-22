@@ -5,7 +5,7 @@
 namespace EsparkKartur.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class SeferID_Ekle : Migration
+    public partial class AuditSystemAdded : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

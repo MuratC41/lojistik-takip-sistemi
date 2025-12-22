@@ -251,6 +251,7 @@ namespace EsparkKartur.Infrastructure.Services
 			// Az önce yaptığımız MapToResponse metodun varsa onu kullan, yoksa uzun Select bloğunu yapıştır:
 			return fisler.Select(f => MapToResponse(f)).ToList();
 		}
+		
 		private SevkFisiResponse MapToResponse(SevkFisi fullFis)
 		{
 			return new SevkFisiResponse
@@ -280,5 +281,6 @@ namespace EsparkKartur.Infrastructure.Services
 				ImzaDosyasi = fullFis.ImzaDosyasi
 			};
 		}
+
 	}
 }

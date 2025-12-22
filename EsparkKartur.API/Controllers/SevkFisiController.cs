@@ -1,6 +1,7 @@
 ﻿using EsparkKartur.Application;
 using EsparkKartur.Application.DTOs.SevkFisi;
 using EsparkKartur.Application.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

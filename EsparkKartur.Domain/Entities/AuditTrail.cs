@@ -10,8 +10,8 @@ namespace EsparkKartur.Domain.Entities
 		public string İşlemTürü { get; set; } // Örn: CREATE, UPDATE, DELETE
 		public string TabloAdı { get; set; }
 		public int KayıtId { get; set; } // Hangi kaydı etkiledi?
-		public string EskiDeger { get; set; } // JSON veya string olarak
-		public string YeniDeger { get; set; } // JSON veya string olarak
+		public string? EskiDeger { get; set; } // Soru işareti ekledik
+		public string? YeniDeger { get; set; }
 		public DateTime İşlemTarihi { get; set; } = DateTime.Now;
 
 		// Navigasyon Özelliği

@@ -1,8 +1,9 @@
-﻿using EsparkKartur.Application.DTOs.Auth;
+﻿using EsparkKartur.Application;
+using EsparkKartur.Application.DTOs.Auth;
+using Google.Apis.Auth.OAuth2.Responses;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using EsparkKartur.Application;
 
 namespace EsparkKartur.Application.Services
 {
@@ -10,5 +11,6 @@ namespace EsparkKartur.Application.Services
 	{
 		Task<AuthResponse> RegisterAsync(RegisterRequest request);
 		Task<AuthResponse> LoginAsync(LoginRequest request);
+		Task<AuthResponse> GoogleLoginAsync(string idToken);
 	}
 }

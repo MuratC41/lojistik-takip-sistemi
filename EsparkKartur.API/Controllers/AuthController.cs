@@ -31,5 +31,27 @@ namespace EsparkKartur.API.Controllers
 			var result = await _authService.LoginAsync(request);
 			return Ok(result);
 		}
+		[HttpPost("google-login")]
+		public async Task<IActionResult> GoogleLogin([FromBody] string idToken)
+		{
+			if (string.IsNullOrEmpty(idToken))
+				return BadRequest("Token boþ olamaz.");
+
+			try
+			{
+				// IAuthService içindeki GoogleLoginAsync metodunu çaðýrýyoruz
+				var response = await _authService.GoogleLoginAsync(idToken);
+
+				if (response == null)
+					return Unauthorized("Google ile giriþ baþarýsýz.");
+
+				return Ok(response); // Baþarýlýysa JWT Token döner
+			}
+			catch (Exception ex)
+			{
+				// Bir hata oluþursa  hata mesajýný dön
+				return BadRequest(new { message = ex.Message });
+			}
+		}
 	}
 }

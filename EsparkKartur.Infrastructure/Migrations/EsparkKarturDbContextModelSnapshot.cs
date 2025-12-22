@@ -24,7 +24,6 @@ namespace EsparkKartur.Infrastructure.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("EskiDeger")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("KayıtId")
@@ -38,7 +37,6 @@ namespace EsparkKartur.Infrastructure.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("YeniDeger")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("İşlemTarihi")
@@ -55,35 +53,33 @@ namespace EsparkKartur.Infrastructure.Migrations
                     b.ToTable("AuditTrails");
                 });
 
-            modelBuilder.Entity("EsparkKartur.Domain.Entities.FişKargoİlişkisi", b =>
+            modelBuilder.Entity("EsparkKartur.Domain.Entities.FisKargo", b =>
                 {
-                    b.Property<int>("FişId")
-                        .HasColumnType("INTEGER");
+                    b.Property<int>("FisId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("FisID");
 
                     b.Property<int>("KargoFirmaId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("KargoID");
 
-                    b.Property<DateTime>("AtanmaTarihi")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("SevkFisiId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("FişId", "KargoFirmaId");
+                    b.HasKey("FisId", "KargoFirmaId");
 
                     b.HasIndex("KargoFirmaId");
 
-                    b.ToTable("FişKargoİlişkileri");
+                    b.ToTable("FisKargo");
                 });
 
-            modelBuilder.Entity("EsparkKartur.Domain.Entities.FişUrunleri", b =>
+            modelBuilder.Entity("EsparkKartur.Domain.Entities.FisUrunleri", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("UrunID");
 
                     b.Property<int>("FişId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("FisID");
 
                     b.Property<int>("KoliAdet")
                         .HasColumnType("INTEGER");
@@ -96,23 +92,26 @@ namespace EsparkKartur.Infrastructure.Migrations
                     b.HasIndex("FişId")
                         .IsUnique();
 
-                    b.ToTable("FişUrunleri");
+                    b.ToTable("FisUrunleri");
                 });
 
             modelBuilder.Entity("EsparkKartur.Domain.Entities.KargoFirmasi", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("KargoFirmaId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("KargoID");
 
                     b.Property<bool>("AktifMi")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("Durum");
 
                     b.Property<string>("FirmaAdi")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("TEXT")
+                        .HasColumnName("KargoAdi");
 
-                    b.HasKey("Id");
+                    b.HasKey("KargoFirmaId");
 
                     b.ToTable("KargoFirmalari");
                 });
@@ -121,115 +120,66 @@ namespace EsparkKartur.Infrastructure.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("KullaniciID");
 
-                    b.Property<string>("Ad")
+                    b.Property<string>("AdSoyad")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("TEXT")
+                        .HasColumnName("AdSoyad");
 
                     b.Property<bool>("AktifMi")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("Durum");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("Email");
 
                     b.Property<string>("KullaniciAdi")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("RolId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("SicilNo")
-                        .IsRequired()
+                    b.Property<DateTime>("OlusturmaTarihi")
                         .HasColumnType("TEXT");
+
+                    b.Property<string>("Rol")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("Rol");
 
                     b.Property<string>("SifreHash")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Soyad")
+                    b.Property<string>("SifreSalt")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RolId");
-
-                    b.HasIndex("SicilNo")
-                        .IsUnique();
-
                     b.ToTable("Kullanicilar");
                 });
 
-            modelBuilder.Entity("EsparkKartur.Domain.Entities.Mağaza", b =>
+            modelBuilder.Entity("EsparkKartur.Domain.Entities.Magaza", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Adres")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("MagazaID");
 
                     b.Property<bool>("AktifMi")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("Durum");
 
                     b.Property<string>("MagazaAdi")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("MagazaKodu")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("MagazaKodu")
-                        .IsUnique();
 
                     b.ToTable("Magazalar");
-                });
-
-            modelBuilder.Entity("EsparkKartur.Domain.Entities.Rol", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("RolAdi")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Roller");
-                });
-
-            modelBuilder.Entity("EsparkKartur.Domain.Entities.Sefer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("BaslangicZamani")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("BitisZamani")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("Durum")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("PersonelId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("SeferYonu")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PersonelId");
-
-                    b.ToTable("Seferler");
                 });
 
             modelBuilder.Entity("EsparkKartur.Domain.Entities.SevkFisi", b =>
@@ -239,7 +189,10 @@ namespace EsparkKartur.Infrastructure.Migrations
                         .HasColumnType("INTEGER")
                         .HasColumnName("FisID");
 
-                    b.Property<bool>("Durum")
+                    b.Property<string>("Aciklama")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Durum")
                         .HasColumnType("INTEGER");
 
                     b.Property<decimal>("Fiyat")
@@ -250,12 +203,10 @@ namespace EsparkKartur.Infrastructure.Migrations
                         .HasColumnType("TEXT")
                         .HasColumnName("FisNumarasi");
 
-                    b.Property<string>("GonderimModu")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("GonderimModu")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("ImzaDosyasi")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("MagazaId")
@@ -266,10 +217,6 @@ namespace EsparkKartur.Infrastructure.Migrations
                         .HasColumnType("INTEGER")
                         .HasColumnName("OlusturanID");
 
-                    b.Property<int>("SeferId")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("SeferID");
-
                     b.Property<DateTime>("TarihSaat")
                         .HasColumnType("TEXT");
 
@@ -278,9 +225,8 @@ namespace EsparkKartur.Infrastructure.Migrations
                         .HasColumnType("TEXT")
                         .HasColumnName("TeslimAlan");
 
-                    b.Property<string>("Yon")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Yon")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -291,37 +237,7 @@ namespace EsparkKartur.Infrastructure.Migrations
 
                     b.HasIndex("OlusturanID");
 
-                    b.HasIndex("SeferId");
-
                     b.ToTable("SevkFisleri");
-                });
-
-            modelBuilder.Entity("EsparkKartur.Domain.Entities.Tarife", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("AktifMi")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<decimal>("Fiyat")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("MagazaId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("TarifeAdi")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("TarifeTipi")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Tarifeler");
                 });
 
             modelBuilder.Entity("EsparkKartur.Domain.Entities.AuditTrail", b =>
@@ -335,11 +251,11 @@ namespace EsparkKartur.Infrastructure.Migrations
                     b.Navigation("Kullanici");
                 });
 
-            modelBuilder.Entity("EsparkKartur.Domain.Entities.FişKargoİlişkisi", b =>
+            modelBuilder.Entity("EsparkKartur.Domain.Entities.FisKargo", b =>
                 {
                     b.HasOne("EsparkKartur.Domain.Entities.SevkFisi", "SevkFisi")
                         .WithMany("Kargoİlişkileri")
-                        .HasForeignKey("FişId")
+                        .HasForeignKey("FisId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -354,42 +270,20 @@ namespace EsparkKartur.Infrastructure.Migrations
                     b.Navigation("SevkFisi");
                 });
 
-            modelBuilder.Entity("EsparkKartur.Domain.Entities.FişUrunleri", b =>
+            modelBuilder.Entity("EsparkKartur.Domain.Entities.FisUrunleri", b =>
                 {
                     b.HasOne("EsparkKartur.Domain.Entities.SevkFisi", "SevkFisi")
                         .WithOne("UrunDetaylari")
-                        .HasForeignKey("EsparkKartur.Domain.Entities.FişUrunleri", "FişId")
+                        .HasForeignKey("EsparkKartur.Domain.Entities.FisUrunleri", "FişId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("SevkFisi");
                 });
 
-            modelBuilder.Entity("EsparkKartur.Domain.Entities.Kullanici", b =>
-                {
-                    b.HasOne("EsparkKartur.Domain.Entities.Rol", "Rol")
-                        .WithMany("Kullanicilar")
-                        .HasForeignKey("RolId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Rol");
-                });
-
-            modelBuilder.Entity("EsparkKartur.Domain.Entities.Sefer", b =>
-                {
-                    b.HasOne("EsparkKartur.Domain.Entities.Kullanici", "Personel")
-                        .WithMany("Seferler")
-                        .HasForeignKey("PersonelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Personel");
-                });
-
             modelBuilder.Entity("EsparkKartur.Domain.Entities.SevkFisi", b =>
                 {
-                    b.HasOne("EsparkKartur.Domain.Entities.Mağaza", "Magaza")
+                    b.HasOne("EsparkKartur.Domain.Entities.Magaza", "Magaza")
                         .WithMany("SevkFisleri")
                         .HasForeignKey("MagazaId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -401,17 +295,9 @@ namespace EsparkKartur.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("EsparkKartur.Domain.Entities.Sefer", "Sefer")
-                        .WithMany("SevkFisleri")
-                        .HasForeignKey("SeferId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Magaza");
 
                     b.Navigation("Olusturan");
-
-                    b.Navigation("Sefer");
                 });
 
             modelBuilder.Entity("EsparkKartur.Domain.Entities.KargoFirmasi", b =>
@@ -419,22 +305,7 @@ namespace EsparkKartur.Infrastructure.Migrations
                     b.Navigation("FişKargoİlişkileri");
                 });
 
-            modelBuilder.Entity("EsparkKartur.Domain.Entities.Kullanici", b =>
-                {
-                    b.Navigation("Seferler");
-                });
-
-            modelBuilder.Entity("EsparkKartur.Domain.Entities.Mağaza", b =>
-                {
-                    b.Navigation("SevkFisleri");
-                });
-
-            modelBuilder.Entity("EsparkKartur.Domain.Entities.Rol", b =>
-                {
-                    b.Navigation("Kullanicilar");
-                });
-
-            modelBuilder.Entity("EsparkKartur.Domain.Entities.Sefer", b =>
+            modelBuilder.Entity("EsparkKartur.Domain.Entities.Magaza", b =>
                 {
                     b.Navigation("SevkFisleri");
                 });

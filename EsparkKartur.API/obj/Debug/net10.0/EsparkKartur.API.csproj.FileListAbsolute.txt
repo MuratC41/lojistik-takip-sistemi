@@ -253,5 +253,9 @@ C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.API\bin\Debug\net10.0\L
 C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.API\bin\Debug\net10.0\LinqKit.Microsoft.EntityFrameworkCore.dll
 C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.API\obj\Debug\net10.0\EsparkKartur.API.sourcelink.json
 C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.API\bin\Debug\net10.0\AutoMapper.dll
-C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.API\bin\Debug\net10.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.API\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.API\bin\Debug\net10.0\Google.Apis.dll
+C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.API\bin\Debug\net10.0\Google.Apis.Auth.dll
+C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.API\bin\Debug\net10.0\Google.Apis.Core.dll
+C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.API\bin\Debug\net10.0\System.Management.dll
+C:\Users\Murat\Desktop\EsparkKarturSolution\EsparkKartur.API\bin\Debug\net10.0\runtimes\win\lib\net7.0\System.Management.dll

@@ -7,21 +7,20 @@ namespace EsparkKartur.Application.DTOs.SevkFisi
 	{
 		// --- VERİTABANI ZORUNLU ALANLARI (NOT NULL) ---
 
-		// 1. Mağaza ID (Zaten Vardı)
+		// 1. Mağaza ID 
 		[Required(ErrorMessage = "Mağaza seçimi zorunludur.")]
 		public int MagazaId { get; set; }
 
-		// 3. OLUŞTURAN ID (LOG HATASINDAN DOLAYI EKLENDİ)
-		// Bu alan, kaydı oluşturan kullanıcının ID'sidir ve DB'de NOT NULL'dır.
+		// 3. OLUŞTURAN ID 
 		[Required(ErrorMessage = "Oluşturan kullanıcı ID'si zorunludur.")]
 		public int OlusturanID { get; set; }
 
-		// 4. FİŞ NUMARASI (DB Şemasına göre NOT NULL'dır)
+		// 4. FİŞ NUMARASI 
 		[Required(ErrorMessage = "Fiş numarası zorunludur.")]
-		[StringLength(50)] // Fiş Numarası için uygun bir uzunluk belirleyin
+		[StringLength(50)] 
 		public string FişNumarasi { get; set; }
 
-		// 5. YÖN (DB Şemasına göre NOT NULL ve CHECK kısıtlaması olan alan)
+		// 5. YÖN 
 		// DB'deki olası değerler: sevk, iade, transfer, geri_donusum
 		[Required(ErrorMessage = "İşlem yönü ('sevk', 'iade', vb.) zorunludur.")]
 		[StringLength(50)]
@@ -30,7 +29,7 @@ namespace EsparkKartur.Application.DTOs.SevkFisi
 		// Gonderim modu: DB'de 'arac_bazli' veya 'parca_bazli' stringleri bekleniyor.
 		// DTO'da bunu int'ten string'e çevirdim.
 		[Required(ErrorMessage = "Gönderim modu seçimi zorunludur.")]
-		[StringLength(12)] // DB'deki string değerlere uyacak uzunluk
+		[StringLength(12)] 
 		public string GonderimModu { get; set; }
 		public string Durum { get; set; } 
 
